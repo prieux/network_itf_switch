@@ -1,1 +1,1 @@
-cscript c:\tools\network_cnx\network_itf_switch.vbs
+cscript %~dp0\network_itf_switch.vbs

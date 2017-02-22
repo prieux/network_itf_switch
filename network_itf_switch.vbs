@@ -1,9 +1,10 @@
 computer = "."
-cableConnectionName = "Connexion au réseau local"
-wifiConnectionName = "Connexion réseau sans fil"
+cableConnectionName = "Ethernet"
+wifiConnectionName = "Wi-Fi"
 set objWMIService = GetObject("winmgmts:\\" & computer & "\root\cimv2" )
 set colAdapters = objWMIService.Execquery("Select * from Win32_NetworkAdapter" )
 for each Adapter in colAdapters
+    WScript.Echo("NetConnectionID=" & Adapter.NetConnectionID)
     if Adapter.NetConnectionID = cableConnectionName then
         set cableAdapter = Adapter
     end if
